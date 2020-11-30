@@ -12,6 +12,7 @@ Node Version Manager - POSIX-compliant bash script
 to manage multiple active node.js versions
 
 %prep
+%setup -n nvm-%{version}
 
 %build
 %{?exp_env}
@@ -19,9 +20,9 @@ to manage multiple active node.js versions
 
 %install
 %{?env_options}
-%{__mkdir_p} %{buildroot%}%{_bindir}
-%{__install} -m0755 %{buildroot}%{_bindir}/nvm.sh
-%{__install} -m0755 %{buildroot}%{_bindir}/nvm-exec
+%{__mkdir_p} %{buildroot}%{_bindir}
+%{__install} -m0755 nvm.sh %{buildroot}%{_bindir}
+%{__install} -m0755 nvm-exec %{buildroot}%{_bindir}
 
 %post
 if [ "$1" = 1 ]; then

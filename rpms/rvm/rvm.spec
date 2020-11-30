@@ -11,6 +11,7 @@ Source0:    https://github.com/rvm/rvm/archive/%{version}.tar.gz
 Ruby enVironment Manager (RVM)
 
 %prep
+%setup -n rvm-%{version}
 
 %build
 %{?exp_env}
@@ -18,8 +19,8 @@ Ruby enVironment Manager (RVM)
 
 %install
 %{?env_options}
-%{__mkdir_p} %{buildroot%}%{_bindir}
-%{__install} -m0755 %{buildroot}%{_bindir}/rvm
+%{__mkdir_p} %{buildroot}%{_bindir}
+%{__install} -m0755 bin/rvm %{buildroot}%{_bindir}/rvm # TODO: actually install and setup rvm
 
 %files
 %{_bindir}/rvm

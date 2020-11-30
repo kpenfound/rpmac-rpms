@@ -3,7 +3,7 @@ REPOPATH=mac/x86_64/
 RPMS=$(shell ls ./rpms)
 
 define create_rpm
-	rpmbuild -ba $(abspath $(SPECDIRS)/$(1)/$(1).spec)
+	rpmbuild --undefine=_disable_source_fetch -bb $(abspath $(SPECDIRS)/$(1)/$(1).spec);
 endef
 
 
