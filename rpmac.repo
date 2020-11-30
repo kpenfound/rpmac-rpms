@@ -1,0 +1,5 @@
+[rpmac-core]
+name=rpmac core
+baseurl=https://rpm.rpmac.io/mac/x86_64
+enabled=1
+gpgcheck=0
